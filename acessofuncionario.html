@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Acesso Restrito | IntelPack</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link para o seu CSS atual -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .login-container {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-box {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .lock-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px var(--primary));
+        }
+        .error-msg {
+            color: #ff4d4d;
+            font-size: 0.8rem;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            display: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <navegation>
+        <div class="logo">
+            <svg class="logo-icon" width="35" height="35" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" fill="rgba(0, 242, 255, 0.1)" stroke="#00f2ff" stroke-width="1.5"/>
+                <rect x="12" y="16" width="16" height="13" rx="2" stroke="#00f2ff" stroke-width="2"/>
+                <path d="M15 16V12C15 9 17 7 20 7C23 7 25 9 25 12V16" stroke="#00f2ff" stroke-width="2"/>
+                <circle cx="20" cy="22.5" r="1.5" fill="#00f2ff"/>
+            </svg>
+            <span>SAFE</span>BAG
+        </div>
+    </navegation>
+
+    <section class="login-container">
+        <div class="login-box glass-card">
+            <div class="lock-icon">
+                <i class="fas fa-user-shield"></i>
+            </div>
+            <h2>Área Interna</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.9rem;">
+                Insira a chave de acesso para visualizar o quadro de especialistas.
+            </p>
+
+            <div class="dadoscadastro">
+                <input type="password" id="accessKey" placeholder="CHAVE DE ACESSO" autocomplete="off">
+                <div id="error" class="error-msg">Chave de acesso inválida.</div>
+                <button class="btn" onclick="verifyAccess()" style="width: 100%;">Validar Entrada</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function verifyAccess() {
+            const key = document.getElementById('accessKey').value;
+            const error = document.getElementById('error');
+            
+            // A SENHA PADRÃO ESTÁ AQUI: "equipe2024"
+            const masterKey = "equipe2026"; 
+
+            if (key === masterKey) {
+                // Se correto, envia para a página da equipe
+                window.location.href = "equipe.html";
+            } else {
+                error.style.display = "block";
+                document.getElementById('accessKey').style.borderBottomColor = "#ff4d4d";
+            }
+        }
+
+        // Permitir dar "Enter" no teclado para entrar
+        document.getElementById('accessKey').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                verifyAccess();
+            }
+        });
+    </script>
+</body>
+</html>
