@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Suporte | SafeBag Tech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <svg class="logo-icon" width="35" height="35" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="18" fill="rgba(0, 242, 255, 0.1)" stroke="#00f2ff" stroke-width="1.5"/>
+                <rect x="12" y="16" width="16" height="13" rx="2" stroke="#00f2ff" stroke-width="2"/>
+                <path d="M15 16V12C15 9 17 7 20 7C23 7 25 9 25 12V16" stroke="#00f2ff" stroke-width="2"/>
+                <circle cx="20" cy="22.5" r="1.5" fill="#00f2ff"/>
+            </svg>
+            <span>SAFE</span>BAG
+        </div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="ajuda.html">Ajuda</a></li>
+            <li><a href="acessofuncionario.html">Squad</a></li>    
+        </ul>
+    </nav>
+
+    <section class="help-center">
+        <div class="mascote-container">
+            <div class="mascote-wrapper" onclick="falarMascote()">
+                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712139.png" alt="SafeBot" id="safebot">
+                <div class="balao-fala" id="balao">Olá! Eu sou o SafeBot. Como posso ajudar?</div>
+            </div>
+            <h2>Central de Inteligência SafeBag</h2>
+            <p>Precisa de suporte técnico ou quer saber onde estamos?</p>
+        </div>
+
+        <div class="grid-ajuda">
+            <div class="glass-card">
+                <h3>📍 Onde Retirar?</h3>
+                <p>Busque o ponto de suporte mais próximo de você em São Paulo.</p>
+                <div class="busca-cep">
+                    <input type="text" id="cep" placeholder="00000-000" maxlength="8">
+                    <button class="btn" onclick="buscarCEP()">Localizar</button>
+                </div>
+                <p id="resultado-cep" style="margin-top: 15px; color: var(--primary); font-weight: bold;"></p>
+            </div>
+
+            <div class="glass-card">
+                <h3>📞 Contato Direto</h3>
+                <p><strong>E-mail:</strong> contato@safebag.tech</p>
+                <p><strong>WhatsApp:</strong> (11) 98765-4321</p>
+                <p><strong>Endereço:</strong> Av. Memorial, São Paulo - SP</p>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h3>Dúvidas Frequentes</h3>
+            <details>
+                <summary>O sensor funciona na chuva?</summary>
+                <p>Sim! O case do Arduino é vedado contra respingos (IP65), mas não mergulhe a bolsa.</p>
+            </details>
+            <details>
+                <summary>Como troco a bateria?</summary>
+                <p>A SafeBag usa uma bateria 9V padrão. Basta abrir o compartimento interno com o zíper de segurança.</p>
+            </details>
+            <details>
+                <summary>O alarme é muito alto?</summary>
+                <p>O buzzer emite 110dB, o suficiente para alertar todos ao redor em caso de tentativa de furto.</p>
+            </details>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
